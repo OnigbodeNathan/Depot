@@ -1,8 +1,7 @@
 package ng.edu.binghamuni.depot.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity(name="drink")
@@ -37,6 +36,7 @@ public class Drink {
     @OneToMany
     private List<Ingredient> ingredientList;
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     public String getName() {
